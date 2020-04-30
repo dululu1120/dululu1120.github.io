@@ -1,0 +1,43 @@
+td{
+    padding:10px;
+    text-align: left;
+}
+form{
+    text-align: center;
+}
+table{
+    border: 1px solid black;
+    background-color: white;
+}
+input[type=submit]{
+    margin: 10px;
+    background: #949449;
+    height: 30px;
+    width: 90px;
+    color: white;
+    font-family: 微軟正黑體;
+    font-size: 15px;
+    border-radius: 5px;
+}
+input[type=submit]:hover{
+
+    background: #CDCD9A;
+    color: black;
+    font-weight: bold;
+}
+th{
+    padding:0 10px; 
+}
+.a{
+    background-color:#F0F0F0;
+}
+.c{
+    border-right: 2px dashed gray;
+}
+.b{
+    background-color: white;
+}
+textarea{
+    width: 400px;
+    height: 200px;
+}

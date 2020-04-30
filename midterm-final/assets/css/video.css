@@ -1,0 +1,33 @@
+video.a{
+	    padding-top: 50px;
+		padding-left: 50px;
+		padding-bottom: 50px;
+        padding-right: 50px;
+
+    	}
+#content table{
+	margin: 0 auto;
+}
+td{
+	padding-bottom: 10%;
+}
+.a{
+	margin-left: 8%;
+	margin-top: 10%;
+}
+td.b{
+        padding-top: 50px;
+		padding-left: 50px;
+	    padding-bottom: 50px;
+        padding-right: 50px;
+        font-size:30px;
+        font-family:"標楷體"	
+}
+.other{
+	text-align: right;
+}
+a.c{
+	padding-right: 7%;
+	font-size:40px;	
+	color:blue;
+}
