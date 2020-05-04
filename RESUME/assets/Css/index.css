@@ -1,0 +1,369 @@
+body{
+	min-width: 1250px;
+
+	font-family:Calibri,"微軟正黑體";
+}
+header{
+	box-shadow: 0px 0px 5px 0px lightgray;
+	border-bottom: lightgray solid 1px;
+	height: 70px;
+	width: 100%;
+	position: fixed;
+	z-index: 100;
+	background: rgba(255,255,255,0.7);
+}
+header div{
+	text-align: center;
+}
+#choose{
+	text-align: right;
+}
+#choose ul{
+	margin: 0;
+	padding:0;
+	font-style: none;
+	margin-right: 50px;
+}
+#choose ul li{
+	display: inline-block; 
+}
+#choose li a {
+	font-family:Calibri;
+	display: block;
+	color: gray;
+	text-decoration: none;
+	padding: 2px 20px;
+	margin: 0em 0.5em;
+	border-bottom: 1px solid lightgray;  
+}
+#choose li a:hover{
+	color: gray;
+	font-weight: bold;
+	border-bottom: 2px solid gray; 
+}
+.logo1{
+	height: 30px;
+	margin: 5px;
+}
+.logo2{
+	top: 10px;
+	position: absolute;
+	height: 400px;
+	padding-left: 180px;
+}
+#img{
+	height:630px;
+	float: left;
+	width: 100%
+}
+#img div{
+	position: relative;
+	top:150px;
+	right:0px;
+	text-align: right;
+	float: right;
+}
+#img div #two{
+	width: 350px;
+}
+#img div #two:hover{
+	position: relative;
+	top:-10px;
+	z-index: 4;
+}
+#img div #one{
+	width: 90px;
+	position: relative;
+	top:-10em;
+	right:5em;
+}
+.img{
+	top:80px;
+	height: 550px;
+	width:100%;
+	position:absolute;
+}
+#main1{
+	padding: 0 5%;
+	float: left;
+	width: 70%
+}
+#contact2{
+	float: left;
+	width: 80%;
+	/*border:1px solid black;*/
+}
+#contact{
+	float: left;
+	width: 20%;
+	/*border:1px solid black;*/
+}
+#contact3{
+	margin-top:10px; 
+	text-align: center;
+	float: left;
+	width: 100%;
+}
+#contact3 form{
+	padding:0 10px 10px 10px; 
+}
+fieldset{
+	border: 1px solid black;
+}
+#contact3 legend{
+	text-align: center;
+	color:rgba(109,131,87,0.9);
+}
+#contact3 input[type="text"],#contact3 input[type="email"],textarea{
+	width:15em;
+	border:none;
+	background-color:rgba(152,152,158,0.19);
+	margin-top: 10px;
+	vertical-align:middle;
+}
+input[type=submit],input[type=reset]{
+	text-align: center;
+	letter-spacing: 6px;
+	background: #949449;
+	height: 30px;
+	width: 90px;
+	color: white;
+	font-size: 15px;
+	border-radius: 5px;
+}
+input[type=submit]:hover,input[type=reset]:hover{
+	background: #CDCD9A;
+	color: black;
+}
+#contact3 p{
+	margin: 0;
+	padding: 0;
+}
+aside img{
+	width: 40px;
+	margin: 30px 10px 0px 10px;
+}
+aside{
+	margin-top: 30px;
+	border: lightgray solid 1px;
+	float: left;
+	width: 28%;
+	z-index: 3;
+	position: relative;
+	top:5em;
+}
+aside p{
+	padding: 1em 0 0 2em;
+}
+marquee{
+	font-weight: bold;
+	font-size:25px; 
+	letter-spacing:8PX; 
+	color: rgb(247,247,221);
+	background-color: rgba(109,131,87,0.61);
+}
+footer{
+	font-family: Calibri light;
+	height: 55px;
+	float: left;
+	padding: 10px;
+	width: 100%;
+	text-align: center;
+	background-color:rgba(192,192,205,0.5);
+	font-size: 10px;
+}
+#About,#Interest,#Liferecord{
+	font-family:Calibri,"微軟正黑體";
+	color:gray;
+	letter-spacing:5PX; 
+}
+.title1{
+	font-size: 20PX;
+	text-align: right;
+}
+.title{
+	font-size: 20px;
+}
+#About h4{
+	text-align: center;
+	margin-top:30px; 
+	color: rgba(109,131,87,0.7);
+}
+.title div{	
+	width: 0;
+}
+.title1 div{
+	position: absolute;
+	right: 5%;
+	width: 0;
+}
+.title:hover div,.title1:hover div{
+	width: 15em;
+	transition: width 0.5s;
+	border-bottom: 1.5px solid lightgray;
+}
+.title:hover,.title1:hover{
+	font-style: italic;
+}
+#About,#Interest,#Liferecord{
+	padding: 2% 5%;
+	float: left;
+	width: 100%
+}
+#WishGoal{
+	border-radius: 4px;
+	font-weight: bold;
+	margin: 0 5%;
+	padding: 2% 2%;
+	float:left;
+	width:86%;
+	box-shadow: 2px 4px 5px gray;
+	font-family:Calibri,"微軟正黑體";
+	background-color:rgba(152,152,158,0.6);
+	height: 20em;
+}
+#WishGoal div{
+	column-span: all;
+	color:white;
+	font-size: 20PX;
+	letter-spacing:5PX; 
+	text-align: center;
+	margin-bottom: 10px;
+}
+#WishGoal h4{
+	-webkit-column-break-before:always;
+	color:gray;
+	font-weight: bold;
+}
+#WishGoal p{
+	text-indent: 2em;
+	color: black;
+	font-size:16px; 
+}
+#WishGoal{
+	columns: 2;
+}
+.introduce{
+	color: gray;
+	text-indent: 2em;
+	padding: 15px;
+	border: 1.5px dashed lightgray;
+	border-radius: 10px;
+}
+.introduce:hover span{
+	font-weight: bold;
+	color: black;
+}
+#drawing{
+	position: relative;
+	z-index: 100;
+	margin-top:20px; 
+    float: left;
+    margin-left: 30%;
+    transform: rotate(90deg);
+    transform-origin: left top 0;
+    white-space: nowrap;
+    color: white;
+    line-height: 90px;
+    font-size: 90px;
+    /*border: 1px solid black;*/
+    font-style: italic;
+	text-shadow: -3px 4px 3px lightgray;
+	font-weight: bold;
+}
+#Interest{
+	height: 50em;
+	position: relative;
+}
+#draw1{
+	position: absolute;
+	top:15em;
+	left:5%;
+	width: 30em;
+}
+
+#draw4{
+	left:30%;
+	top:6em;
+	position:absolute;
+	width: 9em;
+}
+#draw2{
+	right: 5%;
+	position: absolute;	
+	width: 8em;
+	box-shadow: -2px 3px 3px lightgray;
+}
+#draw3{
+	top:10em;
+	right: 9%;
+	position: absolute;
+	width: 34em;
+	box-shadow: -2px 3px 3px lightgray;
+}
+#draw5{
+	z-index: 3;
+	top:27em;
+	right: 24%;
+	position: absolute;
+	width: 25em;
+	box-shadow: -2px 3px 3px lightgray;
+}
+#Liferecord{
+	position: relative;
+	padding:4em 5% 4em 5%;
+	text-align: center;
+	float: left;
+}
+.pic{
+	margin-top: 4em;
+}
+.part{
+	width: 350px;
+	height: 600px;
+	/*background-color: green;*/
+	display: inline-block;
+	overflow: hidden;
+}
+#pic1{
+	height: 400px;
+	padding-bottom: 5px;
+	width: 350px;
+}
+#pic18{
+	height: 250px;
+	width: 350px;
+}
+#pic6{
+	width: 175px;
+	height: 175px;
+	float: left;
+	padding:0 5px 5px 0;
+}
+#pic5{
+	width: 175px;
+	height: 175px;
+	float: left;
+	padding: 0 0 5px 0;
+}
+#pic16{
+	width:350px;
+	height:220px;
+}
+#pic3{
+	padding-top:5px; 
+	width:200px;
+	height: auto;
+	padding-right: 5px;
+}
+#pic2{
+	padding-top:5px; 
+	width: 140px;
+}
+#pic12{
+	width: 350px;
+	padding-top: 5px;
+}
+#pic4{
+	width: 350px;
+}
