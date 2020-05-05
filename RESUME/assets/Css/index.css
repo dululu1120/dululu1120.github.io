@@ -120,6 +120,7 @@ fieldset{
 	background-color:rgba(152,152,158,0.19);
 	margin-top: 10px;
 	vertical-align:middle;
+	border-radius: 3px;
 }
 input[type=submit],input[type=reset]{
 	text-align: center;
@@ -135,6 +136,12 @@ input[type=submit]:hover,input[type=reset]:hover{
 	background: #CDCD9A;
 	color: black;
 }
+#contact3 input[type="text"]:focus,#contact3 input[type="email"]:focus,textarea:focus,#contact3 input[type="text"]:hover,#contact3 input[type="email"]:hover,textarea:hover{
+	outline: none;
+	border: orange 1px solid;
+}
+
+
 #contact3 p{
 	margin: 0;
 	padding: 0;
@@ -187,7 +194,7 @@ footer{
 #About h4{
 	text-align: center;
 	margin-top:30px; 
-	color: rgba(109,131,87,0.7);
+	color: rgba(109,131,87,0.9);
 }
 .title div{	
 	width: 0;
@@ -366,4 +373,11 @@ footer{
 }
 #pic4{
 	width: 350px;
+}
+#top{
+	position: fixed;
+	bottom: 1em;
+	right:0em;
+	width: 7em;
+	z-index: 300;
 }
