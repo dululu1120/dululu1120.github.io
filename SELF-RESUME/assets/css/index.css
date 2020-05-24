@@ -1,0 +1,208 @@
+body{
+	font-family:"Microsoft YaHei UI Light","微軟正黑體";
+	background-image: url(../images/bg.jpg);
+}
+#head{	
+	height: 450px;
+	position: relative;
+	width:100%;
+	float: left;
+	text-align: center;
+}
+#top-1{
+	border-radius:0 10px 10px 0;
+	box-shadow: -2px 3px 5px gray;
+	background-color:rgba(255,255,255,0.4);
+    display:flex;
+    align-items:center;
+	height:250px;
+	position: absolute;
+	left:0;
+	width:50%;
+	margin:4% 0 2% 0;
+	z-index: 1;
+}
+#contact{
+	text-align: left;
+	padding-left:5%;
+	margin-left: 5%;
+	border-left: 1.5px solid gray;
+	float: left;
+	width: 40%;
+}
+#contact1{
+	margin-left: 5%;
+	/*border:1px solid black;*/
+}
+#contact1 img{
+	margin-bottom: 40%;
+	width: 40px;
+}
+#contact h5{
+	margin-bottom: 5%;
+}
+#contact p{
+	font-size: 1rem;
+	line-height: 0.8rem;
+}
+#me{
+	position:absolute;
+	top:0;
+	right:0;
+	bottom: 0;
+	width:auto;
+	float: right;
+}
+#me img{
+	border-radius:0 10px 10px 0;
+	border: 0.1px solid white;
+	border-left: 10px solid white;
+	width:auto;
+	height: 100%;
+}
+#top-2{
+	text-align: center;
+	padding-top: 2%;
+	box-shadow: -2px 3px 5px #565547;
+	background-color: rgba(128, 132, 122, 0.6);
+	z-index: 0;
+	position: absolute;
+	right: 0;
+	height: 380px;
+	width:80%;
+	border-right: 0px;
+	margin:2% 0 2% 0%;
+
+}
+#top-2-1{
+	position: absolute;
+	left:38%;
+}
+#top-2-1 h2{
+	color:#2D382D;
+}
+#word{
+	font-style: italic;
+	padding: 2%;
+	margin-top: 3%;
+	font-size: 35px;
+	font-weight: bold;
+}
+#word:hover{
+  text-shadow:
+    0 0 5px white,
+    0 0 10px white,
+    0 0 20px white,
+    0 0 40px white;
+  animation:shine 3s linear infinite;
+  
+}
+@keyframes shine{
+  0%{opacity:1;}
+  80%{opacity:0.3;}
+  100%{color:#232323;}
+}
+#btn-1{
+	text-align: center;
+}
+#start{
+	background-color: lightgray;
+	border-radius: 5px;
+	font-weight: gray;
+	width:15rem;
+	height:4.5rem;
+	font-size: 1.5rem;
+	margin-bottom: 3%;
+	letter-spacing: 3px;
+}
+#start:hover{
+	background:  rgb(98, 107, 136);
+	color: white;
+	font-weight: bold;
+}
+#body {
+	border:8px double rgba(123, 119, 111,0.8);
+	border-radius: 7px;
+	background: rgb(255,255,255);
+	margin-bottom:2%;
+}
+#one{
+  animation:mymove85 8s;
+}	
+#two{
+  animation:mymove75 8s;
+}
+#four{
+  animation:mymove75 8s;
+}	
+#five{
+  animation:mymove70 8s;
+}	
+#six{
+  animation:mymove80 8s;
+}	
+#seven{
+  animation:mymove95 8s;
+}	
+#eight{
+  animation:mymove65 8s;
+}	
+#nine{
+  animation:mymove90 8s;
+}	
+@keyframes mymove85 {from {width: 0%;}to {width: 85%;}}	
+@keyframes mymove75 {from {width: 0%;}to {width: 75%;}}	
+@keyframes mymove70 {from {width: 0%;}to {width: 70%;}}	
+@keyframes mymove80 {from {width: 0%;}to {width: 80%;}}	
+@keyframes mymove95 {from {width: 0%;}to {width: 95%;}}	
+@keyframes mymove65 {from {width: 0%;}to {width: 65%;}}	
+@keyframes mymove90 {from {width: 0%;}to {width: 90%;}}
+#l{
+	width: 70%;
+	float:right;
+}
+#l-1>div>div>div{
+	margin-bottom:3%;
+}
+#l-1,#l-2,#l-3{
+	background-color: lightgray;
+	padding-bottom: 3px;
+	margin-bottom: 3%;
+}
+#l-2>div{
+	margin: 5%;
+	font-size: 12px;
+}
+.title{
+	border:2px solid gray;
+	height:2em;
+	letter-spacing: 2px;
+	text-align: center;
+	margin:20px 0;
+	background-color: #80847A;
+	color:white;
+	font-weight: bold;
+}
+.progress-bar{
+	background-color: #98956B;
+}
+.abi{
+	text-align: center;
+	margin: 8px;
+}
+.school{
+	margin: 5%;
+	border:1px solid rgba(0,0,0,0);
+}
+#l-3>div>div{
+	margin-right:10px;
+	float:left;
+	width:20%;
+	border-right:5px solid rgba(98, 107, 136,0.3);
+}
+#l-3>div>div:hover{
+	border-right:5px solid rgba(98, 107, 136,0.9);
+}
+#right{
+	margin-bottom: 1.5%;
+}
