@@ -1,0 +1,39 @@
+.tab-pane .mb-0{
+    display: block;  
+    /*color: #7D6060;  */
+	overflow:hidden;  
+    display:-webkit-box;  
+    -webkit-box-orient:vertical;  
+    -webkit-line-clamp:1;/*规定最多显示两行*/
+}
+
+.text-uppercase {
+    letter-spacing: 3px;
+}
+
+.header {
+	/*color: rgba(95, 69, 52, 0.85);*/
+    letter-spacing: 2px;
+    font-weight: 700;
+    font-size: 16px;
+    letter-spacing: 2px;
+}
+.header i{
+	
+	/*color: rgba(95, 69, 52, 0.85);*/
+}
+.material-icons{
+    pointer-events:none !important;
+}
+.btn-white:focus, .btn-white:active, .btn-white:hover {
+     background-color: rgba(0,0,0,0) !important; 
+}#p-1 .btn-white:hover,#p-1 .btn-white:focus{
+    background-color: #000000  !important;
+    color: #fff !important;
+}#p-2 .btn-white:hover,#p-2 .btn-white:focus{
+    background-color: #000000  !important;
+    color: #fff !important;
+}#p-3 .btn-white:hover,#p-3 .btn-white:focus{
+    background-color: #000000  !important;
+    color: #fff !important;
+}

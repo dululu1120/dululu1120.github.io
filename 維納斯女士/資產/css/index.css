@@ -1,0 +1,10 @@
+
+.card-body .media{
+	position: relative;
+}
+.card-body .media>.material-icons{
+    font-size: 15px;
+    position: absolute;
+    top: 2px;
+    left: 8px;
+}
