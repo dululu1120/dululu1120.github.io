@@ -1,0 +1,103 @@
+.detail1 strong{
+	margin:0 !important;
+	color:black !important;
+	font-size: 14px;
+	line-height: 18px;
+	font-weight: inherit;
+	overflow:hidden;  
+    display:-webkit-box;  
+    -webkit-box-orient:vertical;  
+    -webkit-line-clamp:2;/*规定最多显示两行*/
+}
+.container-fluid{
+    padding-right: 0;
+}
+.detail1{
+	margin-left: 10px;
+	color: gray;
+	font-size: 12px;
+}
+.top-left{/*
+	padding-left: 5px;*/
+	margin-left: 10px;
+    position: relative;
+    top:0;
+    bottom: 0;
+    z-index: 2;
+    line-height: 90px;
+}
+.media{
+	position: relative;
+	margin:0;
+	padding: 10px 0; 
+	border-bottom: .5px solid #F1F1F1;
+}
+.pro-img{
+	width: 80px;
+	height:80px;
+}
+.background {
+    height: 100px;
+    width: 100px;
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    background-position: center top;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.rank-1:hover{
+	text-decoration: none;
+}
+.pro-img{
+	height:80px;
+}
+.first{
+    background: url(../img/1.png) no-repeat;
+    background-position: center;
+    background-size: 25px;
+}
+.second{
+    background: url(../img/2.png) no-repeat;
+    background-position: center;
+    background-size: 25px;
+}
+.third{
+    background: url(../img/3.png) no-repeat;
+    background-position: center;
+    background-size: 25px;
+}
+.top-left span{
+    color: #7F7B7B;
+    position: relative;
+    top:-5px;
+    left: 1px;
+    line-height: 10px;
+    font-size: 13px;
+}
+.star i{
+	color:#E1BD55;
+	font-size: 12px;
+	letter-spacing: -3px;
+}
+.star span{
+	font-size: 12px;
+	padding-left: 4px;
+}
+.text-uppercase{
+    letter-spacing: 3px;
+}
+.header{
+    background: rgb(96, 125, 141);
+    color: white !important;
+    letter-spacing: 2px;
+    font-weight: 700;
+    font-size: 16px;
+    letter-spacing: 2px;
+}
+.header i{
+	color:#fff;
+}

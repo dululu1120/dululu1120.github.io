@@ -1,0 +1,33 @@
+body{
+    margin:0px!important;
+}
+.cancel1{
+    position: absolute;
+    bottom:100px;
+    left:40px;
+    font-size: 50px;
+    color: steelblue;
+    /* color:black; */
+}
+.ensure{
+    position: absolute;
+    bottom:100px;
+    right:40px;
+    font-size: 50px;
+    color: mediumseagreen;
+    /* color:black; */
+}
+form{
+    width: 100%;
+}
+#main{
+    height: 80%;
+    display: flex;
+    align-items: center;
+}
+textarea{
+    border-radius: 5px;
+    width: 96%;
+    height:400px;
+    margin:2%;
+}

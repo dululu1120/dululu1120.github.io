@@ -1,0 +1,66 @@
+.tab-pane .mb-0{
+    display: block;  
+    color: #7D6060;  
+    font-size: 15px;
+	overflow:hidden;  
+    display:-webkit-box;  
+    -webkit-box-orient:vertical;  
+    -webkit-line-clamp:1;/*规定最多显示两行*/
+}
+
+.text-uppercase {
+    letter-spacing: 3px;
+}
+.one{
+    color:#63694F;
+}
+.header {
+	/*color: rgba(95, 69, 52, 0.85);*/
+    letter-spacing: 2px;
+    font-weight: 700;
+    font-size: 16px;
+    letter-spacing: 2px;
+}
+.btn-white:focus, .btn-white:active, .btn-white:hover {
+     background-color: rgba(0,0,0,0) !important; 
+     color:#63694F;
+}
+.header i{
+	
+	/*color: rgba(95, 69, 52, 0.85);*/
+}
+.top-right {
+    position: absolute;
+    top:15px;
+    right: 0px;
+    z-index: 2;
+    padding-top: env(safe-area-inset-top);
+    line-height: 1rem;
+}
+.brand{
+    font-size: 12px;
+}
+.money{
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 15px;
+}
+.star i{
+    color:#E1BD55;
+    font-size: 12px;
+    letter-spacing: -4px;
+}
+.star span{
+    font-size: 12px;
+    padding-left: 10px;
+    letter-spacing: 1px;
+}#cate .btn-white:hover,#cate .btn-white:focus{
+    background-color: #000000  !important;
+    color: #fff !important;
+}#cate1 .btn-white:hover,#cate1 .btn-white:focus{
+    background-color: #000000  !important;
+    color: #fff !important;
+}#cate11 .btn-white:hover,#cate11 .btn-white:focus{
+    background-color: #000000  !important;
+    color: #fff !important;
+}
