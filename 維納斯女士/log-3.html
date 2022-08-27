@@ -1,0 +1,61 @@
+<!-- 註冊頁面 -->
+<!doctype html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>註冊頁面</title>
+    <link rel="stylesheet" type="text/css" href="assets/css/log.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <div class="jq22-container">
+        <div class="login-wrap">
+            <div class="bg">
+                <div class="login-html">
+                    <label for="tab-1" class="tab">LOG IN</label>
+                    <input id="tab-2" type="radio" name="tab" class="sign-up" checked>
+                    <label for="tab-2" class="tab">LOG UP</label>
+                    <div class="login-form">
+                        <form action="index.html" method="POST">
+                            <div class="sign-up-htm">
+                                <div class="group">
+                                    <div class="aui-info">
+                                        <div class="txz">
+                                            <img src="assets/img/bg.jpg" id="img-txz" class="aui-img-round user-img" />
+                                        </div>
+                                        <label class="upload_cover">
+                                            <i id="upload_icon" class="fa fa-pencil"></i>
+                                            <input type="file" accept="image/*" id="file-txz" name="file" onchange="upload('#file-txz', '#img-txz');" class="fileInput" value="" />
+                                        </label>
+                                    </div>
+                                    <script type="text/javascript">
+                                    var upload = function(c, d) {
+                                        "use strict";
+                                        var $c = document.querySelector(c),
+                                            $d = document.querySelector(d),
+                                            file = $c.files[0],
+                                            reader = new FileReader();
+                                        reader.readAsDataURL(file);
+                                        reader.onload = function(e) {
+                                            $d.setAttribute("src", e.target.result);
+                                        };
+                                    };
+                                    </script>
+                                    <label class="pic label">@陳阿明</label>
+                                </div>
+                                <div class="group">
+                                    <input type="submit" class="button" value="註冊">
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
