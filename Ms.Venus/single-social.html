@@ -1,0 +1,406 @@
+<!-- 個別文章 -->
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+    <title>MsVenus</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="assets/css/style.css" rel="stylesheet" id="style">
+    <link href="assets/css/ladda.min.css" rel="stylesheet">
+    <link href="assets/css/single-social.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://cdn.bootcss.com/jquery/1.9.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+    $(window).load(function() {
+
+        var link2 = document.referrer;
+        console.log(link2);
+        if (link2.indexOf('single-social.html') == -1&&link2.indexOf('ingredient.html') == -1) {
+            document.cookie = 'href4=' + encodeURIComponent(link2);
+
+            console.log(getCookieByName('href4'));
+            $('.link-1').attr('href', getCookieByName('href4'));
+        } else {
+            $('.link-1').attr('href', getCookieByName('href4'));
+        }
+
+        $(".fix i").click(function() {
+            if (($(this).parent().find('i').hasClass('try') == true) && ($(this).hasClass('try')) == true) { //這個點擊過
+                $(this).removeClass('try');
+            } else if (($(this).parent().find('i').hasClass('try') == true) && (($(this).hasClass('try')) == false)) { //其他已點過
+                $(this).parent().find('i').removeClass('try');
+                $(this).addClass('try');
+            } else {
+                $(this).addClass('try');
+            }
+        });
+    });
+        function parseCookie() {
+        var cookieObj = {};
+        var cookieAry = document.cookie.split(';');
+        var cookie;
+        for (var i = 0, l = cookieAry.length; i < l; ++i) {
+            cookie = jQuery.trim(cookieAry[i]);
+            cookie = cookie.split('=');
+            cookieObj[cookie[0]] = cookie[1];
+        }
+        return cookieObj;
+    }
+
+    function getCookieByName(name) {
+        var value = parseCookie()[name];
+        if (value) {
+            value = decodeURIComponent(value);
+        }
+        return value;
+    }
+
+    var p = 0,
+        t = 0;
+    $(window).scroll(function(e) {
+        p = $(this).scrollTop();
+        if (t < p && p !== 0) {
+            $('.fix').slideUp('fast');
+        } else {
+            $('.fix').slideDown('fast');
+        }
+        t = p;
+    })
+    </script>
+</head>
+
+<body>
+    <div class="modal fade" id="createFileMModal" role="dialog" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <span class="modal-title text-muted">[選色]Maybelline粉底液色號選擇</span>
+                </div>
+                <div class="container modal-body">
+                    <form class="row">
+                        <div class="col-12 mb-1 text-center text-muted">
+                            <figure class="avatar avatar-40 rounded-circle has-background">
+                                <div class="background"><img src="assets/img/image4.jpg" alt=""></div>
+                                <br>
+                            </figure>
+                            <small>陳大明</small>
+                        </div>
+                        <div class="col-12 form-group">
+                            <textarea placeholder="留下你的想法吧..."></textarea>
+                        </div>
+                        <div class="col-5 text-right mt-3 ">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                                <label class="form-check-label" for="defaultCheck1">
+                                    匿名留言
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col-7 text-right mt-2">
+                            <section class="button-demo">
+                                <button class="ladda-button btn-dark" type="submit" data-style="contract"><span class="ladda-label">提交留言</span>
+                                    <div class="ladda-progress"></div>
+                                </button>
+                            </section>
+                        </div>
+                        <script src="assets/js/spin.min.js"></script>
+                        <script src="assets/js/ladda.min.js"></script>
+                        <script type="text/javascript">
+                        Ladda.bind('.ladda-button');
+                        </script>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="background reveal-background"><img src="assets/img/image7.jpg" alt=""></div>
+    <div class="fix">
+        <i class="happy material-icons">sentiment_very_satisfied</i>
+        <i class="sad material-icons">sentiment_very_dissatisfied</i>
+        <span class="material-icons">share</span>
+        <button class="form-control pt-0 pb-0" data-toggle="modal" data-target='#createFileMModal'>comment...</button>
+    </div>
+    <div class="main-container">
+        <style type="text/css">
+        .type {
+            background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0)), url(assets/img/article-1.png) !important;
+            background-repeat: no-repeat,
+                no-repeat !important;
+            background-position: top, center !important;
+            background-size: 100% 100%, 100% auto !important;
+        }
+        </style>
+        <div class="tab-content pb-2" id="maintabContent">
+            <div class="type">
+                <a class="link-1 btn btn-link">
+                    <i class="material-icons">arrow_back</i>
+                </a>
+<!--                 <a class="link-2 btn btn-link">
+                    <i class="material-icons">share</i>
+                </a> -->
+                <span class="text-uppercase">
+                    <a href="" class="pro-img">
+                        <img class="pro-img-1" src="assets/img/image4.jpg" alt="">
+                        <span class="name">
+                            陳小明<br><span>22y,<i class="fa fa-venus"></i>,中性膚質
+                            </span>
+                        </span>
+                    </a>
+                    <div onclick="" class="btn btn-info">追蹤</div>
+                    [選色]Maybelline粉底液色號選擇
+                    <div class="time">2020/12/13 01:25</div>
+                    <span class="detail1">
+                        <i class="fa fa-eye"></i>3255
+                        <i class="material-icons">sentiment_very_satisfied</i>296
+                        <i class="fa fa-share-alt-square"></i>12
+                    </span>
+                </span>
+            </div>
+            <div class="content mb-2 pb-3">
+                <div class="tag">
+                    <a href=""><i class="fa fa-tag tag-1"> Maybelline FIT ME反孔特霧粉底液</i></a>
+                    <a href=""><i class="fa fa-tag tag-1"> ssiohcwqxlkn</i></a>
+                    <a href=""><i class="fa fa-tag tag-1"> sszssdwz</i></a>
+                </div>
+                <div class="text m-4">
+                    　　因為最近天氣越來越熱，我原本使用的粉底液感覺越來越撐不住了。今天去寶雅試了幾個品牌的粉底液，我挑粉底液重點就是希望不會暗沉、持久、不脫妝;因為最近天氣越來越熱，我原本使用的粉底液感覺越來越撐不住了。今天去寶雅試了幾個品牌的粉底液，我挑粉底液重點就是希望不會暗沉、持久、不脫妝;因為最近天氣越來越熱，我原本使用的粉底液感覺越來越撐不住了。今天去寶雅試了幾個品牌的粉底液，我挑粉底液重點就是希望不會暗沉、持久、不脫妝;因為最近天氣越來越熱，我原本使用的粉底液感覺越來越撐不住了。<br>
+                    <img src="assets/img/article-3.jpg">
+                    後來上網找了試色圖，網路上找到的是色圖大概是長下面這樣(如有侵權請告知~~) ▼<img src="assets/img/article-2.png">
+                        　　我在考慮112或115這兩個色號，112好像是偏粉、115是偏黃，我自己膚色是比較中間的，目前偏向112(感覺氣色會比較好)，但還是想問下用過的各位，不知道112這個色號會到很粉嗎?
+                </div>
+            </div>
+            <div class="container shadow-sm pt-2">
+                <span class="px-3 text-muted">評論 </span>
+                <hr class="mb-1 my-1">
+                <div class="content-11 mt-2" id="container-11"><!-- 
+                    <div class="row media text-muted border-bottom mx-3 my-2 pb-2">
+                        <a href="">
+                            <div class="col-1 mr-3">
+                                <img class="pro-img-11" src="assets/img/image4.jpg" alt="">
+                            </div>
+                            <div class="one col-10 small text-muted">
+                                <span class="name1 d-block">
+                                    <strong>@陳小明</strong>
+                                    <span class="detail-1 mr-1">22y·<i class="fa fa-venus"></i>·中性膚質
+                                    </span>
+                                </span>
+                                <span class="d-block">
+                                    <span class="detail-2">
+                                        <span> 2020/11/6 12:22</span><br>
+                                    </span>
+                                </span>
+                            </div>
+                        </a>
+                        <span class="mt-1 small">
+                            Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.
+                        </span>
+                    </div>
+                    <div class="row media text-muted border-bottom mx-3 my-2 pb-2">
+                        <a href="">
+                            <div class="col-1 mr-3">
+                                <img class="pro-img-11" src="assets/img/image4.jpg" alt="">
+                            </div>
+                            <div class="one col-10 small text-muted">
+                                <span class="name1 d-block">
+                                    <strong>@陳小明</strong>
+                                    <span class="detail-1 mr-1">22y·<i class="fa fa-venus"></i>·中性膚質
+                                    </span>
+                                </span>
+                                <span class="d-block">
+                                    <span class="detail-2">
+                                        <span> 2020/11/6 12:22</span><br>
+                                    </span>
+                                </span>
+                            </div>
+                        </a>
+                        <span class="mt-1 small">
+                            Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.
+                        </span>
+                    </div>
+                    <div class="row media text-muted border-bottom mx-3 my-2 pb-2">
+                        <a href="">
+                            <div class="col-1 mr-3">
+                                <img class="pro-img-11" src="assets/img/image4.jpg" alt="">
+                            </div>
+                            <div class="one col-10 small text-muted">
+                                <span class="name1 d-block">
+                                    <strong>@陳小明</strong>
+                                    <span class="detail-1 mr-1">22y·<i class="fa fa-venus"></i>·中性膚質
+                                    </span>
+                                </span>
+                                <span class="d-block">
+                                    <span class="detail-2">
+                                        <span> 2020/11/6 12:22</span><br>
+                                    </span>
+                                </span>
+                            </div>
+                        </a>
+                        <span class="mt-1 small">
+                            Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.
+                        </span>
+                    </div>
+                    <div class="row media text-muted border-bottom mx-3 my-2 pb-2">
+                        <a href="">
+                            <div class="col-1 mr-3">
+                                <img class="pro-img-11" src="assets/img/image4.jpg" alt="">
+                            </div>
+                            <div class="one col-10 small text-muted">
+                                <span class="name1 d-block">
+                                    <strong>@陳小明</strong>
+                                    <span class="detail-1 mr-1">22y·<i class="fa fa-venus"></i>·中性膚質
+                                    </span>
+                                </span>
+                                <span class="d-block">
+                                    <span class="detail-2">
+                                        <span> 2020/11/6 12:22</span><br>
+                                    </span>
+                                </span>
+                            </div>
+                        </a>
+                        <span class="mt-1 small">
+                            Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.
+                        </span>
+                    </div>
+                    <div class="row media text-muted border-bottom mx-3 my-2 pb-2">
+                        <a href="">
+                            <div class="col-1 mr-3">
+                                <img class="pro-img-11" src="assets/img/image4.jpg" alt="">
+                            </div>
+                            <div class="one col-10 small text-muted">
+                                <span class="name1 d-block">
+                                    <strong>@陳小明</strong>
+                                    <span class="detail-1 mr-1">22y·<i class="fa fa-mars"></i>·中性膚質
+                                    </span>
+                                </span>
+                                <span class="d-block">
+                                    <span class="detail-2">
+                                        <span> 2020/11/6 12:22</span><br>
+                                    </span>
+                                </span>
+                            </div>
+                        </a>
+                        <span class="mt-1 small">
+                            Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.
+                        </span>
+                    </div>
+                    <div class="row media text-muted border-bottom mx-3 my-2 pb-2">
+                        <a href="">
+                            <div class="col-1 mr-3">
+                                <img class="pro-img-11" src="assets/img/image4.jpg" alt="">
+                            </div>
+                            <div class="one col-10 small text-muted">
+                                <span class="name1 d-block">
+                                    <strong>@陳小明</strong>
+                                    <span class="detail-1 mr-1">22y·<i class="fa fa-venus"></i>·中性膚質
+                                    </span>
+                                </span>
+                                <span class="d-block">
+                                    <span class="detail-2">
+                                        <span> 2020/11/6 12:22</span><br>
+                                    </span>
+                                </span>
+                            </div>
+                        </a>
+                        <span class="mt-1 small">
+                            Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.
+                        </span>
+                    </div> -->
+                    <div class="row text-center  unfold-field-1">
+                        <div class=" unfold-field_text-1  mx-3">
+                            <a href="javascript:void (0);" class="btn  btn-block text-muted">更多評論</a>
+                        </div>
+                    </div>
+                    <script type="text/javascript">
+                    var unfoldField1 = document.querySelector(".unfold-field-1");
+                    var wrapH1 = document.querySelector("#container-11").offsetHeight;
+                    var wrap1 = document.querySelector("#container-11");
+                    var contentH1 = document.querySelector(".content-11").offsetHeight;
+                    // 如果实际高度大于我们设置的默认高度就把超出的部分隐藏。
+                    if (contentH1 > wrapH1) {
+                        unfoldField1.style.display = "block";
+                    }
+                    wrap1.style.visibility = "visible";
+                    unfoldField1.onclick = function() {
+                        this.parentNode.removeChild(this);
+                        wrap1.style.maxHeight = "100%";
+                        wrap1.style.visible = "visible";
+                    };
+                    </script>
+                </div>
+            </div>
+            <div class="more cintainer shadow-sm py-2 mt-2">
+                <span class="px-3 text-muted">更多文章</span>
+                <hr class="my-1">
+                <div class="content-11 mx-2">
+                    <div class="item-1 bg-white border-bottom">
+                        <a href="single-social.html" class="item">
+                            <div class="media text-muted">
+                                <p class="media-body small">
+                                    <strong>[試色]IM MEME腮紅試色</strong>
+                                    <small>最近把我的美妝櫃整個扒出來整理，找到了很多好久沒用的刷具，所</small>
+                                </p>
+                                <img class="pro-img" src="assets/img/article-1.png" alt="">
+                            </div>
+                        </a>
+                        <span class="count">
+                            <i class="fa fa-eye"></i>3421·
+                            <span class="material-icons">
+                                sentiment_very_satisfied
+                            </span>343
+                        </span>
+                    </div>
+                    <div class="item-1 bg-white border-bottom">
+                        <a href="single-social.html" class="item"><!-- 
+                            <span class="btn user">
+                                <img class="pro-img-1" src="assets/img/image4.jpg" alt="">
+                                <span class="h6">陳小明</span>
+                                <small>25,<i class="fa fa-mars"></i>,中性膚質</small>
+                            </span> -->
+                            <div class="media text-muted">
+                                <p class="media-body small">
+                                    <strong>[試色]IM MEME腮紅試色</strong>
+                                    <small>最近把我的美妝櫃整個扒出來整理，找到了很多好久沒用的刷具，所</small>
+                                </p>
+                                <img class="pro-img" src="assets/img/article-1.png" alt="">
+                            </div>
+                        </a>
+                        <span class="count">
+                            <i class="fa fa-eye"></i>3421·
+                            <span class="material-icons">
+                                sentiment_very_satisfied
+                            </span>343
+                        </span>
+                    </div>
+                    <div class="item-1 bg-white border-bottom">
+                        <a href="single-social.html" class="item"><!-- 
+                            <span class="btn user">
+                                <img class="pro-img-1" src="assets/img/image4.jpg" alt="">
+                                <span class="h6">陳小明</span>
+                                <small>25,<i class="fa fa-mars"></i>,中性膚質</small>
+                            </span> -->
+                            <div class="media text-muted">
+                                <p class="media-body small">
+                                    <strong>[試色]IM MEME腮紅試色</strong>
+                                    <small>最近把我的美妝櫃整個扒出來整理，找到了很多好久沒用的刷具，所</small>
+                                </p>
+                                <img class="pro-img" src="assets/img/article-1.png" alt="">
+                            </div>
+                        </a>
+                        <span class="count">
+                            <i class="fa fa-eye"></i>3421·
+                            <span class="material-icons">
+                                sentiment_very_satisfied
+                            </span>343
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="assets/vendor/bootstrap-4.4.1/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="assets/css/camera.css" rel="stylesheet" id="style">
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+    <script src="https://cdn.bootcss.com/jquery/1.9.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <video id="video"></video>
+    <div class="container">
+        <button class="btn cancel" onclick="javascript:history.go(-1);">
+            <i class="material-icons">arrow_back</i>
+        </button>
+        <button class="btn click" onclick="drawMedia()">
+            <span class="material-icons">
+                center_focus_weak
+            </span>
+        </button>
+        <img id="pictoi" src="#" style="visibility: hidden;display:none;">
+        <div class="image-upload">
+            <label for="file-input">
+                <span class="material-icons">
+                    add_photo_alternate
+                </span>
+            </label>
+            <input type="file" style="display:none" onchange="Upload('#FileUpload','#pictoi');" id="FileUpload" />
+            <input id="file-input" type="button" onclick=" OpenFile()" class="btn btn-info" />
+        </div>
+        <form>
+            <img id="output">
+        </form>
+    </div>
+    <canvas id="qr-canvas" style="width:100%;height:100%;"></canvas>
+    <script type="text/javascript">
+    $(function() {
+        $('.click').click(function() {
+            convertCanvasToImage();
+        });
+
+    });
+    var Upload = function(c, d) {
+
+        "use strict";
+        var $c = document.querySelector(c),
+            $d = document.getElementById('pictoi'),
+            file = $c.files[0],
+            reader = new FileReader();
+        reader.readAsDataURL(file);
+        reader.onload = function(e) {
+            $d.setAttribute("src", e.target.result);
+        };
+        console.log($d);
+
+    };
+
+    function OpenFile() {
+        $("input[type='file']").click();
+    }
+    // var Upload = function(c, d) {
+    //     var input=$('#FileUpload');      
+    //     console.log(input.get(0).files[0]);
+    //     if(input.get(0).files[0]){
+    //         "use strict";
+    //         var $c = document.querySelector(c),
+    //         $d = document.querySelector(d),
+    //         file = $c.files[0],
+    //         reader = new FileReader();
+    //         reader.readAsDataURL(file);
+    //         reader.onload = function(e) {
+    //             $d.setAttribute("src", e.target.result);
+    //         };
+    //         console.log($('#preview_progressbarTW_img').attr('src'));
+    //         // document.write('<link href="assets/css/camera.css" rel="stylesheet" id="style">');
+    //         // document.write('<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">');
+    //         // document.write('<div class="result-div" style="width:100%; height:100%;"><img class="result" src="#"/>');
+    //         // document.write('<form name=identify action="camera1.php" method="POST" enctype="multipart/form-data"><input name=result value="'+input.val()+'" type="hidden"/></form><span class="material-icons cancel1"  onclick="javascript: location.reload();">cancel</span><span onclick="identify.submit();" class="material-icons ensure">check_circle_outline</span></div>');        
+    //         // console.log(input);
+    //     }else{
+    //         alert("選擇無效，請重新試試");
+    //     }
+    // }
+    function convertCanvasToImage() {
+        var output = $('#output');
+        var image = new Image();
+        image.src = ($('#qr-canvas')[0]).toDataURL("image/png", 1.0);
+        var imageData = image.src;
+        document.write('<link href="assets/css/camera.css" rel="stylesheet" id="style">');
+        document.write('<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">');
+        document.write('<div class="result-div" style="width:100%; height:100%;"><img class="result" src="' + imageData + '"/><form name=identify action="camera1.php" method="POST" enctype="multipart/form-data"><input name=result value="' + imageData + '" type="hidden"/></form><span class="material-icons cancel1"  onclick="javascript: location.reload();">cancel</span><span onclick="identify.submit();" class="material-icons ensure">check_circle_outline</span></div>');
+    }
+    $(window).load(function() {
+        openMedia();
+    });
+    var video = document.querySelector('video');
+    var canvas1 = document.getElementById('qr-canvas');
+    var context1 = canvas1.getContext('2d');
+    var mediaStreamTrack;
+    // 一堆相容程式碼
+    window.URL = (window.URL || window.webkitURL || window.mozURL || window.msURL);
+    if (navigator.mediaDevices === undefined) {
+        navigator.mediaDevices = {};
+    }
+    if (navigator.mediaDevices.getUserMedia === undefined) {
+        navigator.mediaDevices.getUserMedia = function(constraints) {
+            var getUserMedia = navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.msGetUserMedia;
+            if (!getUserMedia) {
+                return Promise.reject(new Error('getUserMedia is not implemented in this browser'));
+            }
+            return new Promise(function(resolve, reject) {
+                getUserMedia.call(navigator, constraints, resolve, reject);
+            });
+        }
+    }
+    //攝像頭呼叫配置
+    var mediaOpts = {
+        audio: false,
+        video: true,
+        // video: { facingMode: "environment" } // 或者 "user"
+        video: { facingMode: "environment" }
+        // video: { facingMode: { exact: "environment" } }// 或者 "user"
+    }
+    // 回撥
+    function successFunc(stream) {
+        mediaStreamTrack = stream;
+        video = document.querySelector('video');
+        if ("srcObject" in video) {
+            video.srcObject = stream
+        } else {
+            video.src = window.URL && window.URL.createObjectURL(stream) || stream
+        }
+        video.play();
+    }
+
+    function errorFunc(err) {
+        alert(err.name);
+    }
+    // 正式啟動攝像頭
+    function openMedia() {
+        navigator.mediaDevices.getUserMedia(mediaOpts).then(successFunc).catch(errorFunc);
+    }
+    //關閉攝像頭
+    function closeMedia() {
+        mediaStreamTrack.getVideoTracks().forEach(function(track) {
+            track.stop();
+            context1.clearRect(0, 0, context1.width, context1.height); //清除畫布
+        });
+    }
+    //擷取視訊
+    function drawMedia() {
+        canvas1.setAttribute("width", video.videoWidth);
+        canvas1.setAttribute("height", video.videoHeight);
+        context1.drawImage(video, 0, 0, video.videoWidth, video.videoHeight);
+    }
+    </script>
+</body>
+
+</html>

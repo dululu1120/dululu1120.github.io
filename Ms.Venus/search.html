@@ -1,0 +1,683 @@
+<!-- 商品搜尋 -->
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+    <!--     <link rel=icon href="assets/img/logo-small.png" sizes="any"> -->
+    <title>MsVenus</title><!-- material icons stylesheet -->
+    <link href="assets/vendor/bootstrap-4.4.1/css/bootstrap.min.css" rel="stylesheet"><!-- swiper stylesheet -->
+    <link href="assets/vendor/swiper/css/swiper.min.css" rel="stylesheet"><!-- template stylesheet -->
+    <link href="assets/css/style.css" rel="stylesheet" id="style">
+    <link href="assets/css/search.css" rel="stylesheet" id="style">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+</head>
+
+<body class="ui-rounded" data-page="homepage">
+    <div class="background reveal-background"><img src="assets/img/image7.jpg" alt=""></div>
+    <!-- sidebar left -->
+    <div class="sidebar sidebar-left overlay-sidebar">
+        <div class="sidebar-header">
+            <a href="#">
+                <i class="fa fa-heart fa-2x"></i>
+            </a>
+            <a href="#">
+                <i class="fa fa-bookmark fa-2x"></i>
+            </a>
+            <a href="pie-chart.html">
+                <i class="fa fa-pie-chart fa-2x" aria-hidden="true"></i>
+            </a>
+        </div>
+        <div class="content mt-2">
+            <figure class="avatar avatar-100 rounded-circle has-background mx-auto username">
+                <div class="background"><img src="assets/img/image4.jpg" alt=""></div>
+            </figure>
+            <h6 class="text-center mb-0">蔡阿明</h6>
+            <p id="self" class="text-center pt-1 text-mute">29y,男,中性膚質</p>
+            <div class="container">
+                <div class="row">
+                    <div class="row offset-2 col-8 offset-2 pb-2">
+                        <a href="" class="sidebar-head col-6 text-center" style="border-right: solid 0.1px rgb(172, 160, 146);">
+                            <span class="">111</span><br>
+                            <span class="display">follow</span>
+                        </a>
+                        <a href="" class="ml-2 sidebar-head text-center col-5">
+                            <span class="">11</span><br>
+                            <span class="display">follower</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <hr style="color:'lightgray';">
+            <div id="sidebar" class="mt-1 list-group list-group-flush nav-list">
+                <a href="" class="list-group-item list-group-item-action active">
+                    <i class="fa fa-home"></i>
+                    <span class="text-link">首頁</span>
+                </a>
+                <a href="" class="list-group-item list-group-item-action">
+                    <i class="fa fa-bell"></i>
+                    <span class="text-link">通知</span>
+                </a>
+                <a href="" class="list-group-item list-group-item-action">
+                    <i class="fa fa-star"></i>
+                    <span class="text-link">歷史評星</span>
+                </a>
+                <a href="" class="list-group-item list-group-item-action">
+                    <i class="fa fa-edit"></i>
+                    <span class="text-link">發表文章</span>
+                </a>
+                <a href="" class="list-group-item list-group-item-action">
+                    <i class="fa fa-comment"></i>
+                    <span class="text-link">我的留言</span>
+                </a>
+                <div class="list-group-item multilevel">
+                    <a class="multilevel-link">
+                        <i class="fa fa-mobile" style="font-size:18px;"></i>
+                        <span class="text-link">帳號設定</span>
+                        <i class="material-icons float-right last" style="font-size: 20px;">chevron_right</i>
+                    </a>
+                    <div class="list-group list-group-flush multilevel-dropdown">
+                        <a class="list-group-item list-group-item-action">
+                            <span class="text-link">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;帳密設定</span>
+                        </a>
+                        <a class="list-group-item list-group-item-action">
+                            <span class="text-link">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;使用者資料</span>
+                        </a>
+                    </div>
+                </div>
+                <a href="" class="list-group-item text-danger">
+                    <i class="fa fa-sign-out"></i>
+                    <span class="text-link">登出</span>
+                </a>
+            </div>
+            <p class="copyright"> Copyright 2020. by MsVenus.</p>
+        </div>
+    </div><!-- sidebar left -->
+    <!-- main container -->
+    <div class="main-container">
+        <header class="header">
+            <div class="row no-gutters">
+                <div class="col-auto">
+                    <button class="btn btn-link menu-btn-left">
+                        <i class="material-icons">menu</i>
+                    </button>
+                </div>
+                <div class="col">
+                </div>
+                <div class="col-auto">
+                    <a class="ll search btn btn-link search_icon">
+                        <i class="fa fa-search"></i>
+                    </a>
+                </div>
+                <div class="col-auto">
+                    <a href="" class="ll btn btn-link">
+                        <i class="material-icons">notifications_none</i>
+                        <span class="notification-point"></span>
+                    </a>
+                </div>
+            </div>
+        </header>
+        <script type="text/javascript">
+        $(function() {
+            $('.search-3').hide();
+        });
+        $('.fa-search').on('click', function() {
+            $('.search-3').toggle();
+        });
+        </script>
+        <div class="content">
+            <!-- page content start -->
+            <div class="tab-content" id="maintabContent">
+                <div class="activity-content" id="container">
+                    <form class="row search-3 mb-2 form-inline m-1">
+                        <input class="form-control pt-0 pb-0" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-info pl-0 pr-0" type="submit">Search</button>
+                    </form>
+                    <div class="content">
+                        <div class="row">
+                            <!-- 
+                            <span class="title">商品分類</span> -->
+                            <div id="fix" class="container px-0">
+                                <div class="cate swiper-container categoriestab1 text-center">
+                                    <div class="swiper-wrapper">
+                                        <a href="cate.html" class="swiper-slide">
+                                            <div class="bg">
+                                                <div class="avatar avatar-40 has-background rounded">
+                                                    <div class="background">
+                                                        <img src="assets/img/search-1.png" alt="">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </a>
+                                        <a href="cate.html" class="swiper-slide">
+                                            <div class="bg">
+                                                <div class="avatar avatar-40 has-background rounded">
+                                                    <div class="background">
+                                                        <img src="assets/img/search-2.png" alt="">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </a>
+                                        <a href="cate.html" class="swiper-slide">
+                                            <div class="bg">
+                                                <div class="avatar avatar-40 has-background rounded">
+                                                    <div class="background">
+                                                        <img src="assets/img/search-3.png" alt="">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </a>
+                                        <a href="cate.html" class="swiper-slide">
+                                            <div class="bg">
+                                                <div class="avatar avatar-40 has-background rounded">
+                                                    <div class="background">
+                                                        <img src="assets/img/search-4.png" alt="">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </a>
+                                        <a href="cate.html" class="swiper-slide">
+                                            <div class="bg">
+                                                <div class="avatar avatar-40 has-background rounded">
+                                                    <div class="background">
+                                                        <img src="assets/img/search-5.png" alt="">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </a>
+                                        <a href="cate.html" class="swiper-slide">
+                                            <div class="bg">
+                                                <div class="avatar avatar-40 has-background rounded">
+                                                    <div class="background">
+                                                        <img src="assets/img/search-6.png" alt="">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </a>
+                                        <a href="cate.html" class="swiper-slide">
+                                            <div class="bg">
+                                                <div class="avatar avatar-40 has-background rounded">
+                                                    <div class="background">
+                                                        <img src="assets/img/search-7.png" alt="">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </a>
+                                        <a href="cate.html" class="swiper-slide">
+                                            <div class="bg">
+                                                <div class="avatar avatar-40 has-background rounded">
+                                                    <div class="background">
+                                                        <img src="assets/img/search-8.png" alt="">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="swiper-pagination white-pagination text-left mb-3"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <script>
+                        window.onscroll = function() { myFunction() };
+
+                        function myFunction() {
+                            if (document.body.scrollTop > 10 || document.documentElement.scrollTop > 10) {
+                                document.getElementById("fix").className = "fix";
+                            } else {
+                                document.getElementById("fix").className = "";
+                            }
+                        }
+                        $(function() {
+                            $(".rank-c1").each(function(index) {
+                                if ($(this).text() == "1") {
+                                    $(this).parent().addClass('first');
+                                }
+                                if ($(this).text() == "2") {
+                                    $(this).parent().addClass('second');
+                                }
+                                if ($(this).text() == "3") {
+                                    $(this).parent().addClass('third');
+                                }
+                            });
+                        });
+                        </script>
+                        <div class="row">
+                            <span class="title">排行榜</span>
+                            <div class="container px-0">
+                                <div class="swiper-container categoriestab1 text-center">
+                                    <a href="rank.html">
+                                        <div class="detail">
+                                            <i class="fa fa-chevron-right fa-2x"></i>
+                                        </div>
+                                    </a>
+                                    <div class="rank swiper-wrapper" 　id="rank-c">
+                                        <a href="single-pro.html" class="swiper-slide">
+                                            <div class="avatar avatar-100 has-background mb-2 rounded">
+                                                <div class="top-left">
+                                                    <button class="btn btn-sm btn-rounded">
+                                                        <span class="rank-c1">1</span>
+                                                    </button>
+                                                </div>
+                                                <div class="background">
+                                                    <img src="assets/img/product-1.jpg" alt="">
+                                                </div>
+                                            </div>
+                                            <p class="text-mute small">HABA植萃角鯊精純液</p>
+                                            <small>$1000</small><br>
+                                            <small class='star'>
+                                                4.9<i class="fa fa-star"></i>(888+)
+                                            </small>
+                                        </a>
+                                        <a href="single-pro.html" class="swiper-slide">
+                                            <div class="avatar avatar-100 has-background mb-2 rounded">
+                                                <div class="top-left">
+                                                    <button class="btn btn-sm btn-rounded">
+                                                        <span class="rank-c1">2</span>
+                                                    </button>
+                                                </div>
+                                                <div class="background">
+                                                    <img src="assets/img/product-2.jpg" alt="">
+                                                </div>
+                                            </div>
+                                            <p class="text-mute small">Kiehl's激光極淨白淡化精華液</p>
+                                            <small>$1000</small><br>
+                                            <small class='star'>
+                                                4.9<i class="fa fa-star"></i>(888+)
+                                            </small>
+                                        </a>
+                                        <a href="single-pro.html" class="swiper-slide">
+                                            <div class="avatar avatar-100 has-background mb-2 rounded">
+                                                <div class="top-left">
+                                                    <button class="btn btn-sm btn-rounded">
+                                                        <span class="rank-c1">3</span>
+                                                    </button>
+                                                </div>
+                                                <div class="background">
+                                                    <img src="assets/img/product-3.jpg" alt="">
+                                                </div>
+                                            </div>
+                                            <p class="text-mute small">PRILSKIN金盞花撕除面膜</p>
+                                            <small>$1000</small><br>
+                                            <small class='star'>
+                                                4.9<i class="fa fa-star"></i>(888+)
+                                            </small>
+                                        </a>
+                                        <a href="single-pro.html" class="swiper-slide">
+                                            <div class="avatar avatar-100 has-background mb-2 rounded">
+                                                <div class="top-left">
+                                                    <button class="btn btn-sm btn-rounded">
+                                                        <span class="rank-c1">4</span>
+                                                    </button>
+                                                </div>
+                                                <div class="background">
+                                                    <img src="assets/img/product-4.jpg" alt="">
+                                                </div>
+                                            </div>
+                                            <p class="text-mute small">雪花秀潤燥精華面膜</p>
+                                            <small>$1000</small><br>
+                                            <small class='star'>
+                                                4.9<i class="fa fa-star"></i>(888+)
+                                            </small>
+                                        </a>
+                                        <a href="single-pro.html" class="swiper-slide">
+                                            <div class="avatar avatar-100 has-background mb-2 rounded">
+                                                <div class="top-left">
+                                                    <button class="btn btn-sm btn-rounded">
+                                                        <span class="rank-c1">5</span>
+                                                    </button>
+                                                </div>
+                                                <div class="background">
+                                                    <img src="assets/img/product-1.jpg" alt="">
+                                                </div>
+                                            </div>
+                                            <p class="text-mute small">HABA植萃角鯊精純液</p>
+                                            <small>$1000</small><br>
+                                            <small class='star'>
+                                                4.9<i class="fa fa-star"></i>(888+)
+                                            </small>
+                                        </a>
+                                        <a href="single-pro.html" class="swiper-slide">
+                                            <div class="avatar avatar-100 has-background mb-2 rounded">
+                                                <div class="top-left">
+                                                    <button class="btn btn-sm btn-rounded">
+                                                        <span class="rank-c1">6</span>
+                                                    </button>
+                                                </div>
+                                                <div class="background">
+                                                    <img src="assets/img/product-2.jpg" alt="">
+                                                </div>
+                                            </div>
+                                            <p class="text-mute small">Kiehl's激光極淨白淡化精華液</p>
+                                            <small>$1000</small><br>
+                                            <small class='star'>
+                                                4.9<i class="fa fa-star"></i>(888+)
+                                            </small>
+                                        </a>
+                                        <a href="single-pro.html" class="swiper-slide">
+                                            <div class="avatar avatar-100 has-background mb-2 rounded">
+                                                <div class="top-left">
+                                                    <button class="btn btn-sm btn-rounded">
+                                                        <span class="rank-c1">7</span>
+                                                    </button>
+                                                </div>
+                                                <div class="background">
+                                                    <img src="assets/img/product-3.jpg" alt="">
+                                                </div>
+                                            </div>
+                                            <p class="text-mute small">PRILSKIN金盞花撕除面膜</p>
+                                            <small>$1000</small><br>
+                                            <small class='star'>
+                                                4.9<i class="fa fa-star"></i>(888+)
+                                            </small>
+                                        </a>
+                                        <a href="single-pro.html" class="swiper-slide">
+                                            <div class="avatar avatar-100 has-background mb-2 rounded">
+                                                <div class="top-left">
+                                                    <button class="btn btn-sm btn-rounded">
+                                                        <span class="rank-c1">8</span>
+                                                    </button>
+                                                </div>
+                                                <div class="background">
+                                                    <img src="assets/img/product-4.jpg" alt="">
+                                                </div>
+                                            </div>
+                                            <p class="text-mute small">雪花秀潤燥精華面膜</p>
+                                            <small>$1000</small><br>
+                                            <small class='star'>
+                                                4.9<i class="fa fa-star"></i>(888+)
+                                            </small>
+                                        </a>
+                                    </div>
+                                    <div class="swiper-pagination white-pagination text-left mb-3"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <span class="title">最新商品</span>
+                            <div class="container px-0">
+                                <div class="swiper-container categoriestab1 text-center">
+                                    <a href="rank.html">
+                                        <div class="detail">
+                                            <i class="fa fa-chevron-right fa-2x"></i>
+                                        </div>
+                                    </a>
+                                    <div class="rank swiper-wrapper">
+                                        <a href="single-pro.html" class="swiper-slide">
+                                            <div class="avatar avatar-100 has-background mb-2 rounded">
+                                                <div class="top-left">
+                                                    <button class="btn btn-sm btn-rounded">
+                                                        <span class="rank-c1">1</span>
+                                                    </button>
+                                                </div>
+                                                <div class="background">
+                                                    <img src="assets/img/product-1.jpg" alt="">
+                                                </div>
+                                            </div>
+                                            <p class="text-mute small">HABA植萃角鯊精純液</p>
+                                            <small>$1000</small><br>
+                                            <small class='star'>
+                                                4.9<i class="fa fa-star"></i>(888+)
+                                            </small>
+                                        </a>
+                                        <a href="single-pro.html" class="swiper-slide">
+                                            <div class="avatar avatar-100 has-background mb-2 rounded">
+                                                <div class="top-left">
+                                                    <button class="btn btn-sm btn-rounded">
+                                                        <span class="rank-c1">2</span>
+                                                    </button>
+                                                </div>
+                                                <div class="background">
+                                                    <img src="assets/img/product-2.jpg" alt="">
+                                                </div>
+                                            </div>
+                                            <p class="text-mute small">Kiehl's激光極淨白淡化精華液</p>
+                                            <small>$1000</small><br>
+                                            <small class='star'>
+                                                4.9<i class="fa fa-star"></i>(888+)
+                                            </small>
+                                        </a>
+                                        <a href="single-pro.html" class="swiper-slide">
+                                            <div class="avatar avatar-100 has-background mb-2 rounded">
+                                                <div class="top-left">
+                                                    <button class="btn btn-sm btn-rounded">
+                                                        <span class="rank-c1">3</span>
+                                                    </button>
+                                                </div>
+                                                <div class="background">
+                                                    <img src="assets/img/product-3.jpg" alt="">
+                                                </div>
+                                            </div>
+                                            <p class="text-mute small">PRILSKIN金盞花撕除面膜</p>
+                                            <small>$1000</small><br>
+                                            <small class='star'>
+                                                4.9<i class="fa fa-star"></i>(888+)
+                                            </small>
+                                        </a>
+                                        <a href="single-pro.html" class="swiper-slide">
+                                            <div class="avatar avatar-100 has-background mb-2 rounded">
+                                                <div class="top-left">
+                                                    <button class="btn btn-sm btn-rounded">
+                                                        <span class="rank-c1">4</span>
+                                                    </button>
+                                                </div>
+                                                <div class="background">
+                                                    <img src="assets/img/product-4.jpg" alt="">
+                                                </div>
+                                            </div>
+                                            <p class="text-mute small">雪花秀潤燥精華面膜</p>
+                                            <small>$1000</small><br>
+                                            <small class='star'>
+                                                4.9<i class="fa fa-star"></i>(888+)
+                                            </small>
+                                        </a>
+                                        <a href="single-pro.html" class="swiper-slide">
+                                            <div class="avatar avatar-100 has-background mb-2 rounded">
+                                                <div class="top-left">
+                                                    <button class="btn btn-sm btn-rounded">
+                                                        <span class="rank-c1">5</span>
+                                                    </button>
+                                                </div>
+                                                <div class="background">
+                                                    <img src="assets/img/product-1.jpg" alt="">
+                                                </div>
+                                            </div>
+                                            <p class="text-mute small">HABA植萃角鯊精純液</p>
+                                            <small>$1000</small><br>
+                                            <small class='star'>
+                                                4.9<i class="fa fa-star"></i>(888+)
+                                            </small>
+                                        </a>
+                                        <a href="single-pro.html" class="swiper-slide">
+                                            <div class="avatar avatar-100 has-background mb-2 rounded">
+                                                <div class="top-left">
+                                                    <button class="btn btn-sm btn-rounded">
+                                                        <span class="rank-c1">6</span>
+                                                    </button>
+                                                </div>
+                                                <div class="background">
+                                                    <img src="assets/img/product-2.jpg" alt="">
+                                                </div>
+                                            </div>
+                                            <p class="text-mute small">Kiehl's激光極淨白淡化精華液</p>
+                                            <small>$1000</small><br>
+                                            <small class='star'>
+                                                4.9<i class="fa fa-star"></i>(888+)
+                                            </small>
+                                        </a>
+                                        <a href="single-pro.html" class="swiper-slide">
+                                            <div class="avatar avatar-100 has-background mb-2 rounded">
+                                                <div class="top-left">
+                                                    <button class="btn btn-sm btn-rounded">
+                                                        <span class="rank-c1">7</span>
+                                                    </button>
+                                                </div>
+                                                <div class="background">
+                                                    <img src="assets/img/product-3.jpg" alt="">
+                                                </div>
+                                            </div>
+                                            <p class="text-mute small">PRILSKIN金盞花撕除面膜</p>
+                                            <small>$1000</small><br>
+                                            <small class='star'>
+                                                4.9<i class="fa fa-star"></i>(888+)
+                                            </small>
+                                        </a>
+                                        <a href="single-pro.html" class="swiper-slide">
+                                            <div class="avatar avatar-100 has-background mb-2 rounded">
+                                                <div class="top-left">
+                                                    <button class="btn btn-sm btn-rounded">
+                                                        <span class="rank-c1">8</span>
+                                                    </button>
+                                                </div>
+                                                <div class="background">
+                                                    <img src="assets/img/product-4.jpg" alt="">
+                                                </div>
+                                            </div>
+                                            <p class="text-mute small">雪花秀潤燥精華面膜</p>
+                                            <small>$1000</small><br>
+                                            <small class='star'>
+                                                4.9<i class="fa fa-star"></i>(888+)
+                                            </small>
+                                        </a>
+                                    </div>
+                                    <div class="swiper-pagination white-pagination text-left mb-3"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="brand-b row">
+                            <span class="title">品牌榜</span>
+                            <div class="container px-0">
+                                <div class="swiper-container categoriestab1 text-center">
+                                    <a href="brand.html">
+                                        <div class="detail">
+                                            <i class="fa fa-chevron-right fa-2x"></i>
+                                        </div>
+                                    </a>
+                                    <div class="rank swiper-wrapper">
+                                        <a href="single-brand.html" class="swiper-slide">
+                                            <div class="avatar avatar-100 has-background mb-2 rounded">
+                                                <div class="top-left-top">
+                                                    <button class="btn btn-sm btn-rounded">
+                                                        <span class="rank-c1">1</span>
+                                                    </button>
+                                                </div>
+                                                <div class="background">
+                                                    <img src="assets/img/brand-1.webp" alt="">
+                                                </div>
+                                            </div>
+                                            <p class="text-mute small">La Mer 海洋拉娜</p>
+                                            <div class='star brand'>
+                                                4.9<i class="fa fa-star"></i>(1k+)
+                                            </div>
+                                        </a>
+                                        <a href="single-brand.html" class="swiper-slide">
+                                            <div class="avatar avatar-100 has-background mb-2 rounded">
+                                                <div class="top-left-top">
+                                                    <button class="btn btn-sm btn-rounded">
+                                                        <span class="rank-c1">2</span>
+                                                    </button>
+                                                </div>
+                                                <div class="background">
+                                                    <img src="assets/img/brand-2.png" alt="">
+                                                </div>
+                                            </div>
+                                            <p class="text-mute small">Lancôme</p>
+                                            <div class='star brand'>
+                                                4.9<i class="fa fa-star"></i>(888+)
+                                            </div>
+                                        </a>
+                                        <a href="single-brand.html" class="swiper-slide">
+                                            <div class="avatar avatar-100 has-background mb-2 rounded">
+                                                <div class="top-left-top">
+                                                    <button class="btn btn-sm btn-rounded">
+                                                        <span class="rank-c1">3</span>
+                                                    </button>
+                                                </div>
+                                                <div class="background">
+                                                    <img src="assets/img/brand-3.png" alt="">
+                                                </div>
+                                            </div>
+                                            <p class="text-mute small">YSL Beauty</p>
+                                            <div class='star brand'>
+                                                4.8<i class="fa fa-star"></i>(900+)
+                                            </div>
+                                        </a>
+                                        <a href="single-brand.html" class="swiper-slide">
+                                            <div class="avatar avatar-100 has-background mb-2 rounded">
+                                                <div class="top-left-top">
+                                                    <button class="btn btn-sm btn-rounded">
+                                                        <span class="rank-c1">4</span>
+                                                    </button>
+                                                </div>
+                                                <div class="background">
+                                                    <img src="assets/img/brand-1.webp" alt="">
+                                                </div>
+                                            </div>
+                                            <p class="text-mute small">La Mer 海洋拉娜</p>
+                                            <div class='star brand'>
+                                                4.9<i class="fa fa-star"></i>(1k+)
+                                            </div>
+                                        </a>
+                                        <a href="single-brand.html" class="swiper-slide">
+                                            <div class="avatar avatar-100 has-background mb-2 rounded">
+                                                <div class="top-left-top">
+                                                    <button class="btn btn-sm btn-rounded">
+                                                        <span class="rank-c1">5</span>
+                                                    </button>
+                                                </div>
+                                                <div class="background">
+                                                    <img src="assets/img/brand-2.png" alt="">
+                                                </div>
+                                            </div>
+                                            <p class="text-mute small">Lancôme</p>
+                                            <div class='star brand'>
+                                                4.9<i class="fa fa-star"></i>(888+)
+                                            </div>
+                                        </a>
+                                        <a href="single-brand.html" class="swiper-slide">
+                                            <div class="avatar avatar-100 has-background mb-2 rounded">
+                                                <div class="top-left-top">
+                                                    <button class="btn btn-sm btn-rounded">
+                                                        <span class="rank-c1">6</span>
+                                                    </button>
+                                                </div>
+                                                <div class="background">
+                                                    <img src="assets/img/brand-3.png" alt="">
+                                                </div>
+                                            </div>
+                                            <p class="text-mute small">YSL Beauty</p>
+                                            <div class='star brand'>
+                                                4.8<i class="fa fa-star"></i>(900+)
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="swiper-pagination white-pagination text-left mb-3"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer class="tabs-footer">
+            <ul class="nav nav-tabs justify-content-center" id="maintab" role="tablist">
+                <li class="nav-item text-center"><a href="index.html" class="nav-link mx-1"><i class="fa fa-list fa-2x"></i><br></a></li>
+                <li class="nav-item text-center"><a href="search.html" class="nav-link mx-1 active"><i class="fa fa-search-minus fa-2x"></i><br></a></li>
+                <li class="nav-item text-center"><a href="social.html" class="nav-link mx-1"><i class="fa fa-users fa-2x"></i><br></a></li>
+                <li class="nav-item text-center"><a href="identify.html" class="nav-link mx-1"><i class="fa fa-envira fa-2x" aria-hidden="true"></i><br></a></li>
+            </ul>
+        </footer>
+    </div><!-- main container -->
+    <!-- Template js files -->
+    <script src="assets/js/jquery-3.3.1.min.js"></script>
+    <script src="assets/js/popper.min.js"></script>
+    <script src="assets/vendor/bootstrap-4.4.1/js/bootstrap.min.js"></script><!-- Swiper javascript -->
+    <script src="assets/vendor/swiper/js/swiper.min.js"></script><!-- Custom javascript -->
+    <script src="assets/js/main.js"></script><!-- Cookie for color scheme -->
+    <script src="assets/vendor/cookie/jquery.cookie.js"></script><!-- Color scheme js -->
+    <script src="assets/js/app.js"></script>
+</body>
+
+</html>

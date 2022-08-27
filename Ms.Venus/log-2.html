@@ -1,0 +1,94 @@
+<!-- 註冊頁面 -->
+<!doctype html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>註冊頁面</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="assets/css/log.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="jq22-container">
+        <div class="login-wrap">
+            <div class="bg">
+                <div class="login-html">
+                    <label for="tab-1" class="tab">LOG IN</label>
+                    <input id="tab-2" type="radio" name="tab" class="sign-up" checked>
+                    <label for="tab-2" class="tab">LOG UP</label>
+                    <div class="login-form">
+                        <form id="logup2" action="log-3.html" method="POST">
+                            <div class="sign-up-htm">
+                                <div class="group">
+                                    <select id="sex" class="label select form-control" placeholder="">
+                                        <option value="" selected hidden>性別</option>
+                                        <option value="1">男</option>
+                                        <option value="2">女</option>
+                                        <option value="3">其他</option>
+                                    </select>
+                                    <div class="wrong1 ml-2 text-danger"></div>
+                                </div>
+                                <div class="group">
+                                    <select id="skin" class="label select form-control" placeholder="" required>
+                                        <option value="" selected hidden>膚質</option>
+                                        <option value="a">乾性肌膚</option>
+                                        <option value="b">中性肌膚</option>
+                                        <option value="c">混和性肌膚</option>
+                                        <option value="d">油性肌膚</option>
+                                        <option value="e">敏感性肌膚</option>
+                                    </select>
+                                    <div class="wrong2 ml-2 text-danger"></div>
+                                </div>
+                                <div class="group">
+                                    <input type="number" class="input" min=10 max="100" placeholder="年齡" required>
+                                    <div class="wrong3 ml-2 text-danger"></div>
+                                </div>
+                                <div class="group">
+                                    <div class="container">
+                                        <div class="row ">
+                                            <input onclick="javascript:history.back()" class="text-center col-5 button1" value="上一步">
+                                            <input onclick="validate()" class="text-center col-5 button1 text-center" value="下一步">
+                                        </div>
+                                    </div>
+                                </div>
+                                <script type="text/javascript">
+                                function validate() {
+                                    var sex = $("#sex").val();
+                                    var skin = $("#skin").val();
+                                    var input = $(".input").val();
+                                    if (sex == "" | skin == "" | input == ""){
+                                        // 对比两次输入的密码
+                                        if (sex == "") {
+                                            $('.wrong1').html('請選擇性別');
+                                        } else {
+                                            $('.wrong1').html('');
+                                        }
+                                        if (skin == "") {
+                                            $('.wrong2').html('請選擇膚質');
+                                        } else {
+                                            $('.wrong2').html('');
+                                        }
+                                        if (input == "") {
+                                            $('.wrong3').html('請選擇年齡(年齡只可為數字)');
+                                        } else {
+                                            $('.wrong3').html('');
+                                        }
+                                    } else {
+                                        $('#logup2').submit();
+                                    }
+                                }
+                                </script>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
